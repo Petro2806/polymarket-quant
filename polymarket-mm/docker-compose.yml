@@ -1,0 +1,14 @@
+services:
+  collector:
+    build:
+      context: .
+      dockerfile: ./mining/Dockerfile
+    image: polymarket-collector
+    volumes:
+      - ./data:/data
+    environment:
+      PYTHONUNBUFFERED: "1"
+      POLYMARKET_MARKETS: "0x4319532e181605cb15b1bd677759a3bc7f7394b2fdf145195b700eeaedfd5221, 0xfa48a99317daef1654d5b03e30557c4222f276657275628d9475e141c64b545d"
+      POLYMARKET_POLL_SECONDS: "60"
+      POLYMARKET_DATA_DIR: "/data"
+    restart: unless-stopped
