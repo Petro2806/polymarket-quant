@@ -1,0 +1,69 @@
+Overview:
+This assignment evaluates your core quantitative market-making skills: 
+analyzing market microstructure, 
+reasoning about spreads/volatility/flow, 
+designing a simple MM model, and running a minimal simulation.
+ 
+
+------------------------------------------------------------
+PART 1 - CORE DATA ANALYSIS
+------------------------------------------------------------
+ 
+1. Spread and Liquidity
+- Compute bid–ask spreads for each market.
+- Identify the 3 markets with the tightest spreads and the 3 with the widest.
+- Briefly explain what spreads imply about liquidity, competition, and expected edge.
+ 
+2. Volatility
+- Compute a simple 3-hour rolling volatility of mid-price.
+- Identify the most and least volatile markets.
+- Explain how volatility affects market-making risk and spread decisions.
+ 
+3. Flow and Drift
+- Compute net taker flow: taker_buy - taker_sell.
+- Determine whether sustained flow imbalance predicts short-term price drift.
+- Explain in a few sentences why flow imbalance matters to a market maker.
+ 
+------------------------------------------------------------
+PART 2 - STRATEGY DESIGN
+------------------------------------------------------------
+ 
+Design a simple, realistic Polymarket market-making model. Include:
+ 
+1. Quoting Logic
+- How you set bid/ask levels relative to mid-price.
+- When and why you widen spreads (e.g., volatility spikes, flow imbalance, thin books).
+ 
+2. Inventory Control
+- Maximum inventory allowed.
+- Rules for rebalancing when inventory becomes skewed.
+- Conditions under which you pause quoting.
+ 
+3. Refresh Rules
+- Define what counts as a "material" price move.
+- When to refresh vs when to keep existing quotes to avoid unnecessary churn.
+ 
+------------------------------------------------------------
+PART 3 - MINIMAL SIMULATION
+------------------------------------------------------------
+ 
+Build a lightweight simulation over the dataset:
+- Simulate fills using simple crossing logic.
+- Track inventory, PnL, and quote activity.
+- Compute summary results:
+ - net PnL
+ - maximum inventory load
+ - average spread quoted
+ 
+Provide a brief interpretation of:
+- what worked,
+- what failed,
+- what you would change in a next iteration.
+ 
+For Part 3: feels free to do simulation, running real market making on polymarket will earn extra points+
+
+------------------------------------------------------------
+BONUS (Optional)
+------------------------------------------------------------ 
+A) Explain why negative-risk markets behave differently from regular markets.  
+B) Describe a simple rule-based method for detecting informed trading using prices and flow.
